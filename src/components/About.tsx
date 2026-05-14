@@ -98,8 +98,10 @@ export default function About() {
           ))}
 
           <motion.a
-            href="/CV_Agustian.pdf"
+            href="/CV_AGUSTIAN.pdf"
+            download="CV_Agustian.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-[#576238]/10 border border-[#576238]/30 text-[#576238] rounded-full text-sm font-bold hover:bg-[#576238]/20 transition-all"

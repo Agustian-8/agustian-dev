@@ -96,13 +96,13 @@ export default function Hero() {
               />
             </a>
 
-            <a
-              href="/CV_Agustian.pdf"
-              target="_blank"
+            <a 
+              href="/CV_AGUSTIAN.pdf" 
+              download="CV_Agustian.pdf" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#E8E0D0]/80 text-[#2D3A1F] hover:bg-[#DDD5C5] px-6 py-3 rounded-full font-bold transition-all border border-[#576238]/20"
             >
-              <FileText size={18} /> CV
+              Unduh CV
             </a>
 
             <div className="flex gap-3">
