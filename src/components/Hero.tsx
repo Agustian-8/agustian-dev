@@ -11,7 +11,7 @@ export default function Hero() {
       id="beranda"
       className="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden"
     >
-      {/* Background Glow Effects - Disesuaikan dengan Moss */}
+      {/* Background Glow Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-[#576238] rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob"></div>
         <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#6B7B4A] rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
@@ -19,15 +19,15 @@ export default function Hero() {
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Left Column - Text Content */}
+        {/* Left Column */}
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block py-1.5 px-4 rounded-full bg-[#576238]/15 border border-[#576238]/30 text-[#576238] text-xs font-semibold uppercase tracking-wider mb-6">
-              💻 Web Developer • Staff IT & System • Freelance
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#576238]/15 border border-[#576238]/30 text-[#576238] text-xs font-bold uppercase tracking-wider mb-6">
+              💻 Web Developer • IT Staff • Freelancer
             </span>
           </motion.div>
 
@@ -49,32 +49,32 @@ export default function Hero() {
             transition={{ delay: 0.25 }}
             className="text-base md:text-lg text-[#5A6B3E] mb-4 max-w-2xl leading-relaxed"
           >
-            Staff IT & System yang juga membuka jasa pembuatan{" "}
-            <span className="text-[#2D3A1F] font-medium">website</span>,{" "}
-            <span className="text-[#2D3A1F] font-medium">aplikasi skripsi</span>, dan{" "}
-            <span className="text-[#2D3A1F] font-medium">bimbingan Tugas Akhir S1 Teknik Informatika</span>.
+            Membangun solusi digital yang fungsional, mulai dari{" "}
+            <span className="text-[#2D3A1F] font-medium">website bisnis</span>,{" "}
+            <span className="text-[#2D3A1F] font-medium">sistem enterprise</span>, dan{" "}
+            <span className="text-[#2D3A1F] font-medium">Tugas Akhir Informatika</span>.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-[#6B7B4A] mb-4 h-8 font-medium flex items-center gap-2"
+            className="text-lg md:text-xl text-[#6B7B4A] mb-6 h-8 font-semibold flex items-center gap-2"
           >
-            <Brain size={18} className="opacity-70" />
+            <Brain size={20} className="opacity-80" />
             <Typewriter
               options={{
                 strings: [
                   "Full-Stack Web Development.",
-                  "Machine Learning & Data Mining.",
-                  "Pengembangan Sistem Internal ERP.",
-                  "Jasa Project & Skripsi Informatika.",
-                  "UI/UX & Desain Branding.",
+                  "Machine Learning & Data Science.",
+                  "Pengembangan Sistem ERP.",
+                  "Jasa Project & Skripsi IT.",
+                  "UI/UX Design.",
                 ],
                 autoStart: true,
                 loop: true,
                 cursorClassName: "text-[#576238]",
-                delay: 75,
+                delay: 60,
               }}
             />
           </motion.div>
@@ -83,11 +83,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
             <a
               href="#proyek"
-              className="group flex items-center gap-2 bg-gradient-to-r from-[#576238] to-[#6B7B4A] text-white hover:shadow-lg hover:shadow-[#576238]/25 px-8 py-3.5 rounded-full font-semibold transition-all"
+              className="group flex items-center gap-2 bg-gradient-to-r from-[#576238] to-[#6B7B4A] text-white hover:shadow-lg hover:shadow-[#576238]/30 px-7 py-3 rounded-full font-bold transition-all"
             >
               Lihat Portofolio{" "}
               <ArrowRight
@@ -100,7 +100,7 @@ export default function Hero() {
               href="/CV_Agustian.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#E8E0D0] text-[#2D3A1F] hover:bg-[#DDD5C5] px-6 py-3.5 rounded-full font-semibold transition-all border border-[#576238]/20"
+              className="flex items-center gap-2 bg-[#E8E0D0]/80 text-[#2D3A1F] hover:bg-[#DDD5C5] px-6 py-3 rounded-full font-bold transition-all border border-[#576238]/20"
             >
               <FileText size={18} /> CV
             </a>
@@ -110,8 +110,7 @@ export default function Hero() {
                 href="https://github.com/Agustian-8"
                 target="_blank"
                 rel="noreferrer"
-                className="p-3.5 bg-[#E8E0D0] hover:bg-[#DDD5C5] hover:text-[#576238] rounded-full transition-all text-[#4A532E] border border-[#576238]/20"
-                title="GitHub"
+                className="p-3 bg-[#E8E0D0]/80 hover:bg-[#DDD5C5] hover:text-[#576238] rounded-full transition-all text-[#4A532E] border border-[#576238]/20"
               >
                 <FaGithub size={20} />
               </a>
@@ -119,8 +118,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/agustian"
                 target="_blank"
                 rel="noreferrer"
-                className="p-3.5 bg-[#E8E0D0] hover:bg-[#DDD5C5] hover:text-[#576238] rounded-full transition-all text-[#4A532E] border border-[#576238]/20"
-                title="LinkedIn"
+                className="p-3 bg-[#E8E0D0]/80 hover:bg-[#DDD5C5] hover:text-[#576238] rounded-full transition-all text-[#4A532E] border border-[#576238]/20"
               >
                 <User size={20} />
               </a>
@@ -128,7 +126,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Column - Profile Photo */}
+        {/* Right Column */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -138,10 +136,10 @@ export default function Hero() {
           <div className="relative w-64 h-80 md:w-72 md:h-96 lg:w-80 lg:h-[450px]">
             <div className="absolute inset-0 bg-gradient-to-r from-[#576238] to-[#6B7B4A] rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
             
-            <div className="relative w-full h-full rounded-3xl border-3 border-[#576238]/20 overflow-hidden shadow-2xl">
+            <div className="relative w-full h-full rounded-3xl border-2 border-[#576238]/20 overflow-hidden shadow-2xl">
               <Image
                 src="/foto-agustian.png"
-                alt="Foto Profil Agustian"
+                alt="Agustian"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
                 priority
