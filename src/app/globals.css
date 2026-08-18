@@ -1,24 +1,28 @@
 @import "tailwindcss";
 
-body {
-  background-color: #F0EADC; /* Eggshell */
-  color: #2D3A1F; /* Teks gelap untuk kontras dengan background terang */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+body {
+  background-color: #F2F2F2; /* Menggunakan palet paling terang untuk bg */
+  color: #0D0D0D; /* Menggunakan palet paling gelap untuk teks dasar */
+}
+
+/* Custom scrollbar Monokrom */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #E8E0D0;
+  background: #D9D9D9; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #576238;
+  background: #736E6E;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A532E;
+  background: #403D3E;
 }

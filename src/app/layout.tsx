@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+// Tambahkan import LanguageProvider dari folder context yang sudah kita buat
+import { LanguageProvider } from "@/context/LanguageContext"; 
 
 // 1. Mengimpor dan mengatur font Poppins
 const poppins = Poppins({
@@ -24,7 +26,10 @@ export default function RootLayout({
     // 3. Menambahkan 'scroll-smooth' agar saat menu navbar diklik, layarnya meluncur mulus
     <html lang="id" className="scroll-smooth">
       <body className={`${poppins.className} antialiased`}>
-        {children}
+        {/* 4. Membungkus children dengan LanguageProvider agar semua komponen tahu bahasa yang aktif */}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
