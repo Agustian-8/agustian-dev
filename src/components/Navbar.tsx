@@ -50,75 +50,99 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#F0EADC]/90 backdrop-blur-xl border-b border-[#576238]/20 shadow-lg py-3" : "bg-transparent py-5"
+        scrolled 
+          ? "bg-white/95 backdrop-blur-xl border-b border-[#576238]/10 shadow-sm py-3" 
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
-        {/* BAGIAN LOGO YANG DIUBAH (Ditengahkan) */}
+        {/* LOGO - Berubah warna saat di-scroll */}
         <div className="flex-shrink-0 z-50">
-          <Link href="/" className="flex flex-col items-center leading-none group">
-            <span className="text-3xl font-black tracking-tighter text-[#2D3A1F] group-hover:text-[#576238] transition-colors">
-              AT<span className="text-[#576238]">.</span>
+          <Link href="/" className="flex flex-col items-center leading-none group cursor-pointer">
+            <span className={`text-3xl font-black tracking-tighter transition-colors ${scrolled ? "text-[#2D3A1F] group-hover:text-[#576238]" : "text-white group-hover:text-gray-300"}`}>
+              AT<span className={scrolled ? "text-[#576238]" : "text-gray-400"}>.</span>
             </span>
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#5A6B3E] mt-1 pl-[0.2em]">
+            <span className={`text-[10px] font-bold tracking-[0.2em] mt-1 pl-[0.2em] transition-colors ${scrolled ? "text-[#576238]" : "text-gray-400"}`}>
               AGUSTIAN
             </span>
           </Link>
         </div>
 
-        <ul className="hidden md:flex flex-1 justify-center space-x-8 text-sm font-medium text-[#4A532E]">
+        {/* MENU DESKTOP - Berubah warna saat di-scroll */}
+        <ul className="hidden md:flex flex-1 justify-center space-x-8 text-sm font-medium">
           {navLinks.map((link) => (
             <li key={link.key}>
               <Link
                 href={link.href}
                 onClick={() => setActiveLink(link.key)}
-                className={`relative group py-2 transition-colors ${
-                  activeLink === link.key ? "text-[#2D3A1F] font-bold" : "hover:text-[#576238]"
+                className={`relative group py-2 transition-colors cursor-pointer ${
+                  activeLink === link.key 
+                    ? (scrolled ? "text-[#2D3A1F] font-bold" : "text-white font-bold") 
+                    : (scrolled ? "text-[#4A532E] hover:text-[#576238]" : "text-gray-300 hover:text-white")
                 }`}
               >
                 {link.name}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-[#576238] transition-all duration-300 ${
+                <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
                   activeLink === link.key ? "w-full" : "w-0 group-hover:w-full"
-                }`}></span>
+                } ${scrolled ? "bg-[#576238]" : "bg-white"}`}></span>
               </Link>
             </li>
           ))}
         </ul>
 
+        {/* TOMBOL KANAN */}
         <div className="flex items-center gap-3 z-50">
+          {/* Tombol Translate (Ditambahkan cursor-pointer) */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#E8E0D0] hover:bg-[#DDD5C5] text-[#4A532E] rounded-full text-xs font-bold transition-colors border border-[#576238]/20 shadow-sm"
+            className={`cursor-pointer flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-colors border backdrop-blur-md ${
+              scrolled 
+                ? "bg-[#f1f1f1] hover:bg-[#e2e2e2] text-[#2D3A1F] border-[#576238]/20" 
+                : "bg-white/10 hover:bg-white/20 text-white border-white/20"
+            }`}
             aria-label="Toggle Language"
           >
             <Globe size={14} />
             {language === "id" ? "ID" : "EN"}
           </button>
+          
           <a
             href={waLink} target="_blank" rel="noopener noreferrer"
-            className="flex items-center justify-center w-9 h-9 md:w-10 md:h-10 bg-[#E8F5E9] hover:bg-[#C8E6C9] text-[#128C7E] rounded-full transition-colors shadow-sm"
+            className={`cursor-pointer flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full transition-colors backdrop-blur-md ${
+              scrolled
+                ? "bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/20"
+                : "bg-white/10 hover:bg-white/20 text-[#25D366] border border-white/20"
+            }`}
           >
             <FaWhatsapp size={20} />
           </a>
-          <button className="md:hidden text-[#2D3A1F] p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          
+          {/* Tombol Mobile Menu (Ditambahkan cursor-pointer) */}
+          <button 
+            className={`md:hidden p-2 transition-colors cursor-pointer ${scrolled ? "text-[#2D3A1F]" : "text-white"}`} 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
+      {/* MENU MOBILE */}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-full left-0 w-full bg-[#F0EADC]/95 backdrop-blur-xl border-b border-[#576238]/20"
+          className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-[#576238]/10 shadow-lg"
         >
           <ul className="flex flex-col p-6 space-y-4">
             {navLinks.map((link) => (
               <li key={link.key}>
                 <Link
                   href={link.href}
-                  className={`block py-2 transition-colors ${
-                    activeLink === link.key ? "text-[#2D3A1F] font-bold border-l-4 border-[#576238] pl-3" : "text-[#4A532E] hover:text-[#576238] pl-4"
+                  className={`block py-2 transition-colors cursor-pointer ${
+                    activeLink === link.key 
+                    ? "text-[#2D3A1F] font-bold border-l-4 border-[#576238] pl-3" 
+                    : "text-[#4A532E] hover:text-[#576238] pl-4"
                   }`}
                   onClick={() => { setActiveLink(link.key); setMobileMenuOpen(false); }}
                 >

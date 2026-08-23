@@ -5,24 +5,24 @@ html {
 }
 
 body {
-  background-color: #F2F2F2; /* Menggunakan palet paling terang untuk bg */
-  color: #0D0D0D; /* Menggunakan palet paling gelap untuk teks dasar */
+  background-color: #ffffff; /* Diubah menjadi putih */
+  color: #2D3A1F; 
 }
 
-/* Custom scrollbar Monokrom */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #D9D9D9; 
+  background: #f1f1f1; /* Sedikit diterangkan agar cocok dengan background putih */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #736E6E;
+  background: #576238;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #403D3E;
+  background: #4A532E;
 }

@@ -9,7 +9,8 @@ import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <main className="bg-[#F0EADC] min-h-screen selection:bg-[#576238]/30 relative">
+    // bg-[#F0EADC] diubah menjadi bg-white
+    <main className="bg-white min-h-screen selection:bg-[#576238]/30 relative">
       <Navbar />
       <Hero />
       <About />
